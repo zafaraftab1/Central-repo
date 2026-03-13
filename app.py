@@ -2,3 +2,10 @@
 mylist=[0,3,5,0,56,23]
 mylist2= [i for i in mylist if i==0]+[i for i in mylist if i!=0]
 print(mylist2)
+
+# code to find the largest and smallest elements in a list
+
+list1=[3,45,87,21,90,21]
+largest=0
+smallest=0
+for i in 
