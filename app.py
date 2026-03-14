@@ -5,7 +5,7 @@ mylist2= [i for i in mylist if i==0]+[i for i in mylist if i!=0]
 print(mylist2)
 
 # code to find the largest and smallest elements in a list
-
+------------------------------------------------------------
 list1 = [3, 45, 87, 21, 90, 21]
 
 largest = list1[0]
@@ -18,3 +18,13 @@ for i in list1:
 
 print("Largest:", largest)
 print("Smallest:", smallest)
+
+-----------------------------------------------------------
+#Factorial Program
+n = 5
+fact = 1
+
+for i in range(1, n+1):
+    fact = fact * i
+
+print(fact)
