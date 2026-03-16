@@ -28,3 +28,46 @@ for i in range(1, n+1):
     fact = fact * i
 
 print(fact)
+
+-----------------------------------------------------------------
+
+def ladderLength(beginWord, endWord, wordList):
+
+    word_set = set(wordList)
+
+    if endWord not in word_set:
+        return 0
+
+    begin_set = {beginWord}
+    end_set = {endWord}
+
+    visited = set()
+    level = 1
+
+    while begin_set and end_set:
+
+        if len(begin_set) > len(end_set):
+            begin_set, end_set = end_set, begin_set
+
+        next_level = set()
+
+        for word in begin_set:
+
+            for i in range(len(word)):
+                for c in "abcdefghijklmnopqrstuvwxyz":
+
+                    new_word = word[:i] + c + word[i+1:]
+
+                    if new_word in end_set:
+                        return level + 1
+
+                    if new_word in word_set and new_word not in visited:
+                        visited.add(new_word)
+                        next_level.add(new_word)
+
+        begin_set = next_level
+        level += 1
+
+    return 0
+
+
