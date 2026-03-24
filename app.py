@@ -81,6 +81,40 @@ def fib(n):
 
 fib(10)
 ----------------------------------------------------------------------------------
-# code for palindrome 
+import json
+import boto3
+import pandas as pd
+from io import BytesIO
+
+s3 = boto3.client('s3')
+
+def lambda_handler(event, context):
+    records = []
+
+    # read Firehose records
+    for record in event['records']:
+        payload = json.loads(record['data'])
+        records.append(payload)
+
+    # convert to dataframe
+    df = pd.DataFrame(records)
+
+    # basic transformation
+    df['processed_time'] = pd.Timestamp.now()
+
+    # convert to parquet
+    buffer = BytesIO()
+    df.to_parquet(buffer, index=False)
+
+    # upload to S3
+    s3.put_object(
+        Bucket='my-processed-bucket',
+        Key='processed/data.parquet',
+        Body=buffer.getvalue()
+    )
+
+    return {"status": "success"}
+
+--------------------------------------------------------------------------
 
 
