@@ -126,3 +126,22 @@ def find_max(nums):
 
     return max_num
 
+
+---------------------------------------------------------------------------
+
+input1 = ["eat","tea","act","ate","cat","bat","silent","listen"]
+
+from collections import defaultdict
+
+def group_anagram(words):
+    anagram_map = defaultdict(list)
+
+    for word in words:
+        key = "".join(sorted(word.lower()))
+        anagram_map[key].append(word)
+
+    return list(anagram_map.values())
+
+
+print(group_anagram(input1))
+
