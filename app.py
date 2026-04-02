@@ -145,5 +145,5 @@ def group_anagram(words):
 
 print(group_anagram(input1))
 
-------------
+----------------
 
