@@ -147,4 +147,22 @@ def group_anagram(words):
 print(group_anagram(input1))
 
 --------------------------------------------------------------------------
+# group of anagram
 
+def group_anagrams(words):
+    anagram_map = {}
+
+    for word in words:
+        key = ''.join(sorted(word))  # sort letters
+
+        if key not in anagram_map:
+            anagram_map[key] = []
+
+        anagram_map[key].append(word)
+
+    return list(anagram_map.values())
+
+
+# example
+words = ["eat", "tea", "tan", "ate", "nat", "bat"]
+print(group_anagrams(words))
