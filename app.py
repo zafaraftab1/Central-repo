@@ -166,3 +166,28 @@ def group_anagrams(words):
 # example
 words = ["eat", "tea", "tan", "ate", "nat", "bat"]
 print(group_anagrams(words))
+
+--------------------------------------------------------------------
+#code for non repeating character 
+def first_non_repeating(s: str):
+    freq = {}
+
+    for ch in s:
+        freq[ch] = freq.get(ch, 0) + 1
+
+    for ch in s:
+        if freq[ch] == 1:
+            return ch
+
+    return None
+
+
+# Taking input from user
+s = input("Enter string: ")
+
+result = first_non_repeating(s)
+
+if result:
+    print("First non-repeating character is:", result)
+else:
+    print("No non-repeating character found")
