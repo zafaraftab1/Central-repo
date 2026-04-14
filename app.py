@@ -191,3 +191,5 @@ if result:
     print("First non-repeating character is:", result)
 else:
     print("No non-repeating character found")
+
+----
