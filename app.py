@@ -192,4 +192,4 @@ if result:
 else:
     print("No non-repeating character found")
 
-----------
+------------
