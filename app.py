@@ -167,7 +167,7 @@ def group_anagrams(words):
 words = ["eat", "tea", "tan", "ate", "nat", "bat"]
 print(group_anagrams(words))
 
---------------------------------------------------------------------
+-----------------------------------------------------------------
 #code for non repeating character 
 def first_non_repeating(s: str):
     freq = {}
