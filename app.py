@@ -192,4 +192,72 @@ if result:
 else:
     print("No non-repeating character found")
 
---------------------
+--------------------------------------------------------
+#This is a modular function-based design where each step—calculation, discount, and shipping—is handled independently, forming a small data processing pipeline.
+from __future__ import print_function, division
+
+
+def calculate_totals(cart_items):
+    totals = []
+    for cart in cart_items:
+        totals.append(round(sum(cart), 2))
+    return totals
+
+
+def apply_discounts(cart_totals):
+    discounted_totals = []
+
+    for total in cart_totals:
+        if total < 50:
+            final = total
+        elif total < 100:
+            final = total * 0.90
+        elif total < 200:
+            final = total * 0.85
+        else:
+            final = total * 0.80
+
+        discounted_totals.append(round(final, 2))
+
+    return discounted_totals
+
+
+def calculate_shipping(final_totals):
+    shipping_costs = []
+
+    for total in final_totals:
+        if total < 25:
+            cost = 10.00
+        elif total < 75:
+            cost = 5.00
+        else:
+            cost = 0.00
+
+        shipping_costs.append(round(cost, 2))
+
+    return shipping_costs
+
+
+def main():
+    func = int(input())
+    n = int(input())
+
+    cart_items = []
+    for _ in range(n):
+        cart_items.append(list(map(float, input().split())))
+
+    totals = calculate_totals(cart_items)
+
+    if func == 1:
+        result = totals
+    elif func == 2:
+        result = apply_discounts(totals)
+    else:
+        discounted = apply_discounts(totals)
+        result = calculate_shipping(discounted)
+
+    print(*["{:.2f}".format(x) for x in result])
+
+
+if __name__ == "__main__":
+    main()
