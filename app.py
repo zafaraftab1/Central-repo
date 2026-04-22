@@ -262,3 +262,20 @@ def main():
 if __name__ == "__main__":
     main()
 =================================================================================
+
+# find first index from a string
+
+def first_non_repeating(s):
+    freq = {}
+
+    # count frequency
+    for ch in s:
+        freq[ch] = freq.get(ch, 0) + 1
+
+    # find first non-repeating character index
+    for i, ch in enumerate(s):
+        if freq[ch] == 1:
+            return i
+
+    return -1
+print(first_non_repeating("fleet"))
