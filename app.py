@@ -281,3 +281,23 @@ def first_non_repeating(s):
 print(first_non_repeating("fleet"))
 
 ================================================================================
+
+
+s = "welcome to ey"
+
+word = ""
+count = 0
+
+for i in range(len(s)):
+
+    if s[i] != " ":
+        word += s[i]
+        count += 1
+
+    if s[i] == " " or i == len(s) - 1:
+
+        if word != "":
+            print(word, ":", count)
+
+        word = ""
+        count = 0
