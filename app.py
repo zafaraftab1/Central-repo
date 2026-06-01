@@ -192,7 +192,7 @@ if result:
 else:
     print("No non-repeating character found")
 
---------------------------------------------------------
+-----------------------------------------------------------
 #This is a modular function-based design where each step—calculation, discount, and shipping—is handled independently, forming a small data processing pipeline.
 from __future__ import print_function, division
 
