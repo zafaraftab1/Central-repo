@@ -303,7 +303,7 @@ for i in range(len(s)):
         count = 0
 
 =================================================================================
-
+# Find some of nested data
 def get_sum(data):
     total=0
     if isinstance(data,int):
