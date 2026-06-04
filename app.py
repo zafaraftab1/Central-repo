@@ -303,3 +303,34 @@ for i in range(len(s)):
         count = 0
 
 =================================================================================
+
+def get_sum(data):
+    total=0
+    if isinstance(data,int):
+        return data
+    
+    elif isinstance(data, dict):
+        for value in data.values():
+            total +=get_sum(value)
+            
+    elif isinstance(data,list):
+        for item in data:
+            total += get_sum(item)
+    
+    return total
+
+
+
+
+data = {
+"a": 10,
+"b": {
+"c": [1, 2, {"d": 3}],
+"e": 4
+},
+"f": [5, 6]
+}
+
+print(get_sum(data))
+
+
