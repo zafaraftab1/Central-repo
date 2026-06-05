@@ -332,5 +332,34 @@ data = {
 }
 
 print(get_sum(data))
+=============
+def get_documents(query):
+    """Mock vector database retrieval"""
+    return [
+        "payment service fail",
+        "Database connection exhausted during traffic",
+        "high latency observed in payment process"
+    ]
+
+
+def summarize_documents(document):
+    """Mock Vertex AI / LLM call"""
+    return f"Summary: {document}"
+
+
+def retrieval_and_summarize(query):
+    documents = get_documents(query)
+    summaries = []
+
+    for document in documents:
+        summary = summarize_documents(document)
+        summaries.append(summary)
+
+    return summaries
+
+
+result = retrieval_and_summarize("why is payment service failing")
+print(result)
+
 
 
