@@ -362,7 +362,7 @@ def retrieval_and_summarize(query):
 result = retrieval_and_summarize("why is payment service failing")
 print(result)
 
-==========
+============
 
 
 
