@@ -362,7 +362,7 @@ def retrieval_and_summarize(query):
 result = retrieval_and_summarize("why is payment service failing")
 print(result)
 
-=========================
+===========================
 
 #find missing number in a list 
 nums = [1, 2, 3, 5]
