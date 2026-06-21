@@ -1,4 +1,4 @@
-=============================================
+==============================================
 
 #code to extract all zeros to left and all non zeros to right
 
