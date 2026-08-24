@@ -117,7 +117,7 @@ def lambda_handler(event, context):
 
     return {"status": "success"}
 
-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 #Find the largest number in a list
 def find_max(nums):
     max_num = nums[0]
